@@ -59,6 +59,12 @@ int main() {
 		std::cout << "Enter command (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command);
 
+		// Check if Ctrl+D was pressed (EOF condition)
+		if (std::cin.eof()) {
+			std::cout << "\nExiting..." << std::endl;
+			break;
+		}
+
 		if (command == "ADD") {
 			addContact(phonebook);
 		} else if (command == "SEARCH") {
@@ -66,20 +72,23 @@ int main() {
 			std::string input;
 			std::cout << "Enter the index of the contact to view details: ";
 			
-			// Use std::getline to detect when Enter is pressed
-			std::getline(std::cin, input);
+			std::getline(std::cin, input);//std::getline to detect when Enter is pressed
+
+			if (std::cin.eof()) {// Check again if EOF was reached while reading input
+				std::cout << "\nExiting..." << std::endl;
+				break;
+			}
 
 			if (input.empty()) {
-				// Handle empty input (Enter pressed)
-				std::cout << "Invalid input. Please enter a valid number." << std::endl;
+				std::cout << "Invalid input. Please enter a valid number." << std::endl;// Handle empty input (Enter pressed)
 				continue; // Retry the loop
 			}
 
 			try {
-				// Try to convert the input to an integer
-				int index = std::stoi(input);
+				int index = std::stoi(input);// Try to convert the input to an integer
 				phonebook.displayContactDetails(index);
-			} catch (const std::invalid_argument&) {
+			} 
+			catch (const std::invalid_argument&) {
 				// Handle invalid input that can't be converted to an integer
 				std::cout << "Invalid input. Please enter a valid number." << std::endl;
 			} catch (const std::out_of_range&) {
