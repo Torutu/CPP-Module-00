@@ -80,7 +80,7 @@ int main() {
 			}
 
 			if (input.empty()) {
-				std::cout << "Invalid input. Please enter a valid number." << std::endl;// Handle empty input (Enter pressed)
+				std::cout << "Error: Invalid input. Please enter a valid number." << std::endl;// Handle empty input (Enter pressed)
 				continue; // Retry the loop
 			}
 
@@ -90,16 +90,16 @@ int main() {
 			} 
 			catch (const std::invalid_argument&) {
 				// Handle invalid input that can't be converted to an integer
-				std::cout << "Invalid input. Please enter a valid number." << std::endl;
+				std::cout << "Error: Invalid input. Please enter a valid number." << std::endl;
 			} catch (const std::out_of_range&) {
 				// Handle input that is out of integer range
-				std::cout << "Input number is out of range." << std::endl;
+				std::cout << "Error: Input number is out of range." << std::endl;
 			}
 
 		} else if (command == "EXIT") {
 			break;
 		} else {
-			std::cout << "Unknown command." << std::endl;
+			std::cout << "Error: Unknown command." << std::endl;
 		}
 	}
 	return 0;

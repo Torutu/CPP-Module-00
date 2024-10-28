@@ -5,6 +5,17 @@
 PhoneBook::PhoneBook() : currentIndex(0), totalContacts(0) {}
 
 void PhoneBook::addContact(const Contact& contact) {
+    // Check if any field in the contact is empty
+    if (contact.getFirstName().empty() ||
+        contact.getLastName().empty() ||
+        contact.getNickname().empty() ||
+        contact.getPhoneNumber().empty() ||
+        contact.getDarkestSecret().empty()) {
+        std::cout << "Error: All fields must be filled in to add a contact." << std::endl;
+        return;
+    }
+
+    // Proceed with adding the contact
     contacts[currentIndex] = contact;
     currentIndex = (currentIndex + 1) % MAX_CONTACTS;
     if (totalContacts < MAX_CONTACTS) {
@@ -27,7 +38,7 @@ void PhoneBook::displayContacts() const {
 
 void PhoneBook::displayContactDetails(int index) const {
     if (index < 0 || index >= totalContacts) {
-        std::cout << "Invalid index!" << std::endl;
+        std::cout << "Error: Invalid index!" << std::endl;
         return;
     }
     const Contact& contact = contacts[index];

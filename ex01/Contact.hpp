@@ -25,6 +25,8 @@ public:
 
     bool isEmpty() const;  // Check if a contact is empty
 
+    bool isValid() const;
+
 private:
     std::string firstName;
     std::string lastName;
