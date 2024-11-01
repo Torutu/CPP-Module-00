@@ -1,9 +1,9 @@
 NAME = phonebook
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++2b
+FLAGS = -Wall -Wextra -Werror -std=c++11
 
 SRC = main.cpp PhoneBook.cpp Contact.cpp
-OBJ_DIR = Os
+OBJ_DIR = objects
 OBJ = $(OBJ_DIR)/main.o $(OBJ_DIR)/PhoneBook.o $(OBJ_DIR)/Contact.o
 
 all: $(NAME)

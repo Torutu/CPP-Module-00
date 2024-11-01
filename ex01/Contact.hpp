@@ -1,4 +1,15 @@
-#pragma once
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: walnaimi <walnaimi@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/31 15:43:01 by walnaimi          #+#    #+#             */
+/*   Updated: 2024/10/31 15:50:14 by walnaimi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
@@ -24,8 +35,6 @@ public:
     std::string getDarkestSecret() const;
 
     bool isEmpty() const;  // Check if a contact is empty
-
-    bool isValid() const;
 
 private:
     std::string firstName;

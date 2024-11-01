@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: walnaimi <walnaimi@student.hive.fi>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/31 15:42:47 by walnaimi          #+#    #+#             */
+/*   Updated: 2024/10/31 15:46:40 by walnaimi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <limits>
 #include "PhoneBook.hpp"
@@ -79,7 +91,7 @@ int main() {
 				break;
 			}
 
-			if (input.empty()) {
+			if (input.empty() || input.length() != 1) {
 				std::cout << "Error: Invalid input. Please enter a valid number." << std::endl;// Handle empty input (Enter pressed)
 				continue; // Retry the loop
 			}
